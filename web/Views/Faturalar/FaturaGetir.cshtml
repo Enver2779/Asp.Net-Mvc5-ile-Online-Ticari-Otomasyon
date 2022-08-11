@@ -1,0 +1,36 @@
+﻿@model ProjeMVC.Models.SINIFLAR.Faturalar
+@{
+    ViewBag.Title = "FaturaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Urun Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("FaturaGuncelle", "Faturalar", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.FaturalarId)
+    @Html.LabelFor(x => x.FaturalarSeriNo)
+    @Html.TextBoxFor(x => x.FaturalarSeriNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.FaturalarSiraNo)
+    @Html.TextBoxFor(x => x.FaturalarSiraNo, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.VergiDairesi)
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Saat)
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TeslimAlan)
+    @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.TeslimEden)
+    @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+}

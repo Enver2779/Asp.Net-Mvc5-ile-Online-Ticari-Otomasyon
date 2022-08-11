@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+<h2>Index</h2>
+<button class="btn btn-primary"  id="BTN1">Button 1</button>
+<button class="btn btn-secondary" id="BTN2">Button 2</button>
+<button class="btn btn-dark" id="BTN3">Button 3</button>
+<button class="btn btn-danger" id="BTN4">Button 4</button>
+
+<script src="~/Scripts/jquery-3.4.1.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    $('#BTN1').click(function () {
+        swal("Buarası 1. alert");
+    });
+</script>
+<script>
+    $('#BTN2').click(function () {
+        swal("Buarası 2. alert");
+    });
+</script>
+<script>
+    $('#BTN3').click(function () {
+        swal("Good job!", "You clicked the button!", "success");
+    });
+</script>
+<script>
+    $('#BTN4').click(function () {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! Your imaginary file has been deleted!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
+    });
+</script>

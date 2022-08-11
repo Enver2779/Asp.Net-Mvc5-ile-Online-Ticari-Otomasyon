@@ -1,0 +1,25 @@
+﻿@using ProjeMVC.Models.SINIFLAR
+@model List<KargoTakip>
+@{
+    ViewBag.Title = "KargoTakip";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>KargoTakip</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Açıklama</th>
+        <th>Tari</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.Aciklama</td>
+            <td>@x.TarihZaman</td>
+            
+        </tr>
+    }
+
+</table>
